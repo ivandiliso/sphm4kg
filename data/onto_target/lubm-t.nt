@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/lubm/targets"
+         xmlns="http://www.example.org/lubm/targets#">
+
+<owl:Ontology rdf:about="http://www.example.org/lubm/targets"/>
+
+<owl:Class rdf:about="#Target">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_takesCourse_range"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_teacherOf_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_publicationAuthor_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_hasAlumnus_range"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_takesCourse_range"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_worksFor_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_memberOf_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_publicationAuthor_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_subOrganizationOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_undergraduateDegreeFrom_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_memberOf_range"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_takesCourse_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_takesCourse_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_hasAlumnus_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_takesCourse_range"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Some_worksFor_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+            <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+</rdf:RDF>

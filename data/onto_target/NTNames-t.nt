@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/NTNames/targets"
+         xmlns="http://www.example.org/NTNames/targets#">
+
+<owl:Ontology rdf:about="http://www.example.org/NTNames/targets"/>
+
+<owl:Class rdf:about="#Target">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Man"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#ReligiousBelief"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Man"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Nation"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_spouseOf_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#City"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_memberOf_range"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_religiousBelief_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Group"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#GeopoliticalArea"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_ethnicity_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#GeographicArea"/>
+        <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_relativeOf_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_parentOf_range"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_siblingOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Agent"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Man"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#CognitiveAgent"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Man"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_relativeOf_range"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_collaboratesWith_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Human"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_residentPlace_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Human"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_relativeOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_childOf_range"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_enemyOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Object"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_religiousBelief_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Man"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_visitedPlace_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Man"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_relativeOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Region"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Object"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Man"/>
+            <rdf:Description rdf:about="http://semanticbible.org/ns/2005/NTNames#Some_parentOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+</rdf:RDF>

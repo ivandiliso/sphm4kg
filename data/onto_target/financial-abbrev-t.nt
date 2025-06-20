@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/financial-abbrev/targets"
+         xmlns="http://www.example.org/financial-abbrev/targets#">
+
+<owl:Ontology rdf:about="http://www.example.org/financial-abbrev/targets"/>
+
+<owl:Class rdf:about="#Target">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Account"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasSexValue_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Client"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#CreditCard"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasStatementIssuanceFrequency_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#PermanentOrder"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#CentralBohemia"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasLoanStatusValue_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#PermanentOrder"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#HouseholdPayment"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#NoProblemsFinishedLoan"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Loan"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_isPermanentOrderFor_range"/>
+        <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasPermanentOrder_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Client"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Woman"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#PermanentOrder"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_isPermanentOrderFor_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Client"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasAgeValue_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasOwner_range"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasStatementIssuanceFrequency_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Account"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasStatementIssuanceFrequency_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasSexValue_range"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_isUserOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasSexValue_range"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_livesIn_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasSexValue_range"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasAgeValue_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Account"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasPermanentOrder_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Client"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasSexValue_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasPermanentOrder_range"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/unnamed.owl#Some_hasStatementIssuanceFrequency_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+</rdf:RDF>

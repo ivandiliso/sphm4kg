@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/KRKZEROONE/targets"
+         xmlns="http://www.example.org/KRKZEROONE/targets#">
+
+<owl:Ontology rdf:about="http://www.example.org/KRKZEROONE/targets"/>
+
+<owl:Class rdf:about="#Target">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance0_range"/>
+        <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistanceLessThan2_range"/>
+        <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance6_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistance1_range"/>
+        <rdf:Description rdf:about="http://www.test.de/test#Some_hasPiece_range"/>
+        <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance5_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.test.de/test#Some_hasLowerRankThan_range"/>
+        <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance6_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistance0_range"/>
+        <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistance5_range"/>
+        <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance1_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://www.test.de/test#BKing"/>
+        <rdf:Description rdf:about="http://www.test.de/test#ONE"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#WRook"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistanceLessThan4_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistanceLessThan8_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance2_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistanceLessThan1_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistanceLessThan3_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistanceLessThan3_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_hasLowerFileThan_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistanceLessThan3_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance6_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistance7_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistanceLessThan1_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistance1_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistanceLessThan7_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_fileDistanceLessThan4_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance1_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistance2_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistanceLessThan4_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Game"/>
+            <rdf:Description rdf:about="http://www.test.de/test#ONE"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Piece"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_hasLowerRankThan_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistanceLessThan1_range"/>
+            <rdf:Description rdf:about="http://www.test.de/test#Some_rankDistanceLessThan4_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+</rdf:RDF>
