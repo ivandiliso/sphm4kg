@@ -1,6 +1,6 @@
 # Learning Interpretable Probabilistic Models and Schema Axioms for Knowledge Graphs
 
-
+[![DOI](https://zenodo.org/badge/1005798178.svg)](https://doi.org/10.5281/zenodo.15708405)
 
 
 ### Requirements

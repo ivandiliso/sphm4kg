@@ -28,10 +28,10 @@ from sklearn.pipeline import Pipeline
 
 from MBM.ontology import Ontology
 from utils import SimpleLogger
-from MBM.models.BNB import BNB
+from MBM.models.MBNB import BNB
 from MBM.models.BNB_EM import BNB_EM
-from MBM.models.mixture import VBBMM
-from MBM.models.mixture import BernoulliMixture, BernoulliMixtureSGD
+from MBM.models.HB import VBBMM
+from MBM.models.HB import BernoulliMixture, BernoulliMixtureSGD
 from sklearn.metrics import make_scorer, precision_score, recall_score, f1_score, roc_auc_score
 from utils import pretty_print, color
 from sklearn.model_selection import cross_val_score
@@ -47,7 +47,7 @@ from sklearn.metrics import accuracy_score
 from scipy.stats import uniform
 from sklearn.model_selection import ParameterGrid
 from tabulate import tabulate
-from MBM.models.mixture import HierachicalBernoulliMixture
+from MBM.models.HB import HierachicalBernoulliMixture
 import wittgenstein as lw
 from sklearn.tree import DecisionTreeClassifier
 import pickle
