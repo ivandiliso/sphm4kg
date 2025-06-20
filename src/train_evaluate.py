@@ -398,7 +398,7 @@ for target_type in ["simple", "hard"]:
     res_dict[target_type] = (averages, rule_averages)
 
 
-with open(ONTO_NAME + ".out", "wb") as f:
+with open(ONTO_NAME + ".bin", "wb") as f:
     pickle.dump(res_dict, f)
 
 
