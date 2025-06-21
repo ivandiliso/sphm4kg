@@ -81,12 +81,12 @@ $$
 
 | Model | Parameters and Ranges |
 | - | - | 
-| $\texttt{MBNB}$ | |
+| $\texttt{MBNB}$ | `{}`|
 | $\texttt{HB}_{\texttt{VB}}$ | `{n_components = 5, n_init = 10, n_iter = 200}`| 
 | $\texttt{HB}_{\texttt{EM}}$ | `{n_components = 5, max_iter = 200, tol=1e-3}` | 
 | $\texttt{HB}_{\texttt{GD}}$ | `{n_components = 5, max_iter = 200, tol=1e-3, learning_rate=1e-4}`|
 | $\texttt{Tree}$ |  `{max_depth=3, min_samples_leaf=10, criterion="log_loss"}` | 
-| $\texttt{IREP}$ | `{max_depth=3, min_samples_leaf=10, criterion="log_loss"}` |  
-| $\texttt{Ripper}$ | `{max_depth=3, min_samples_leaf=10, criterion="log_loss"}` |  
-| $\texttt{AxiomWrapper}$ | |  
+| $\texttt{LogReg}$ | `{C=0.01, penalty='l1', solver='saga', max_iter=200}` |  
+| $\texttt{HLogReg}$ | `{n_components = 5, n_init = 10, n_iter = 200, C=0.01, penalty='l1', solver='saga', max_iter=200}` |  
+| $\texttt{AxiomWrapper}$ | `{theta_u : (0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9), theta_p : (0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)}`|  
 
