@@ -11,6 +11,7 @@ from sklearn.cluster import KMeans
 import numpy as np
 from owlready2 import *
 from sklearn.base import clone
+from sklearn.linear_model import LogisticRegression
 
 TRS = 0.5
 
@@ -1009,3 +1010,44 @@ class HierachicalBernoulliMixture(BaseEstimator, ClusterMixin):
     
     def __str__(self):
         return f"HierachicalBernoulliMixture({self.bottom_tier_model.__name__})"
+
+
+
+
+class TwoTierMixture(BaseEstimator, ClusterMixin):
+    def __init__(self, bottom_tier_model, n_components, **kwargs):
+        self.bottom_tier_model = bottom_tier_model
+        self.bottom_tier_args = kwargs
+        self.n_components = n_components
+
+    def fit(self, X, y):
+        X, y = check_X_y(X, y)
+
+        # 1. Calculate class priors (pi and 1-pi from the paper)
+        self.classes_, counts = np.unique(y, return_counts=True)
+
+        # This model learns the parameters for P(x | y=1)
+        self.model_1_ = self.bottom_tier_model(n_components=self.n_components, **self.bottom_tier_args)
+        self.model_1_.fit(X)
+
+
+        self.clss_model = LogisticRegression(C=0.01, penalty='l1', multi_class='multinomial', solver='saga', max_iter=200)
+
+        self.clss_model.fit(self.model_1_.predict_proba(X), y)
+
+     
+        self.is_fitted_ = True
+        return self
+    
+    def predict_proba(self, X):
+        return self.clss_model.predict_proba(self.model_1_.predict_proba(X))
+        
+    
+    def predict(self, X):
+        check_is_fitted(self)
+        X = check_array(X)
+
+        res = self.predict_proba(X)
+
+        return res.argmax(axis=1)
+ 

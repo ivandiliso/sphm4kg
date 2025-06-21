@@ -29,7 +29,6 @@ from sklearn.pipeline import Pipeline
 from MBM.ontology import Ontology
 from utils import SimpleLogger
 from MBM.models.MBNB import BNB
-from MBM.models.BNB_EM import BNB_EM
 from MBM.models.HB import VBBMM
 from MBM.models.HB import BernoulliMixture, BernoulliMixtureSGD
 from sklearn.metrics import make_scorer, precision_score, recall_score, f1_score, roc_auc_score

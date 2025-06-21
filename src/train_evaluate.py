@@ -11,7 +11,6 @@ import argparse
 import pickle
 
 import numpy as np
-import wittgenstein as lw
 from owlready2 import *
 from sklearn.base import clone
 from sklearn.feature_selection import VarianceThreshold
@@ -33,6 +32,7 @@ from MBM.models.HB import (
     BernoulliMixtureEM,
     BernoulliMixtureSGD,
     HierachicalBernoulliMixture,
+    TwoTierMixture
 )
 from MBM.models.rule_helpers import (
     HardRulePredictionWrapper,
@@ -40,6 +40,7 @@ from MBM.models.rule_helpers import (
 )
 from MBM.ontology import Ontology
 from utils import color, pretty_print
+from sklearn.linear_model import LogisticRegression
 
 # Arguments Parsing
 ################################################################################
@@ -172,9 +173,9 @@ mixture_h_gd = HierachicalBernoulliMixture(
     batch_size=batch_size,
 )
 
+logreg = LogisticRegression(C=0.01, penalty='l1', multi_class='multinomial', solver='saga', max_iter=200)
+hlogreg = TwoTierMixture(BernoulliMixtureVB, n_components=5)
 tree = DecisionTreeClassifier(max_depth=3, min_samples_leaf=10, criterion="log_loss")
-irep = lw.IREP(max_rules=5)
-ripper = lw.RIPPER(max_rules=5)
 
 
 pretty_print("\nPrediction models\n", color.CYAN)
@@ -186,8 +187,8 @@ models = {
     'HB_EM' : mixture_h_em,
     'HB_GD' : mixture_h_gd,
     "Tree": tree,
-    "IREP": irep,
-    "RIPPER": ripper,
+    "HLogReg": hlogreg,
+    "LogREg": logreg
 }
 
 
@@ -224,8 +225,8 @@ for target_type in ["simple", "hard"]:
             'HB_EM' : clone(mixture_h_em),
             'HB_GD' : clone(mixture_h_gd),
             "Tree": clone(tree),
-            "IREP": clone(irep),
-            "RIPPER": clone(ripper),
+            "HLogReg" : clone(hlogreg),
+            "LogReg" : clone(logreg)
         }
 
         target = targets[target_id]
