@@ -1,3 +1,10 @@
+"""
+University of Bari Aldo Moro
+
+@author: Ivan Diliso, Nicola Fanizzi
+"""
+
+
 import numpy as np
 from sklearn.model_selection import KFold, RandomizedSearchCV
 from sklearn.base import BaseEstimator, ClassifierMixin

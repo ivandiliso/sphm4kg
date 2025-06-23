@@ -1,5 +1,5 @@
 """
-Università degli Studi di Bari Aldo Moro
+University of Bari Aldo Moro
 @authors: Ivan Diliso, Nicola Fanizzi 
 
 # Intended Usage
