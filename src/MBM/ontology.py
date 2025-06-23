@@ -1,3 +1,9 @@
+"""
+University of Bari Aldo Moro
+
+@author: Ivan Diliso, Nicola Fanizzi
+"""
+
 import os
 import owlready2
 from owlready2 import *
@@ -24,8 +30,10 @@ class Ontology:
         self.random_seed = random_seed
 
         self.onto = None  # This will hold the loaded ontology object
-        self.features = None # This will hold the loaded features
-        self.features_complement = None # This will hold the loaded features complements 
+        self.features = None  # This will hold the loaded features
+        self.features_complement = (
+            None  # This will hold the loaded features complements
+        )
 
         self._set_java()
 
@@ -39,7 +47,7 @@ class Ontology:
             print("Running JAVA in MacOS")
             java_home_path = os.popen("/usr/libexec/java_home").read().strip()
             owlready2.JAVA_EXE = os.path.join(java_home_path, "bin", "java")
-            
+
         owlready2.reasoning.JAVA_MEMORY = self.java_memory
 
         print(f"Owlready2 will use Java from: {owlready2.JAVA_EXE}")
@@ -99,7 +107,7 @@ class Ontology:
 
         print("# Individuals ASSERTED: %d \n" % (len(self.individuals),))
 
-    def compute_features(self, object_props = True, data_props = True):
+    def compute_features(self, object_props=True, data_props=True):
 
         # CLASSES
         self.features = self.classes.copy()
@@ -133,10 +141,19 @@ class Ontology:
             with self.onto:
                 for p in range(len(self.dprops)):
 
-                    dom_p = self.dprops[p].domain if not (self.dprops[p].domain == []) else [Thing]
-                    ran_p = self.dprops[p].range if not (self.dprops[p].range == []) else [Thing]
-                    new_feature = types.new_class('Some_' + self.dprops[p].name + '_'
-                                                + 'range', (Thing,))  # dom_p[0]
+                    dom_p = (
+                        self.dprops[p].domain
+                        if not (self.dprops[p].domain == [])
+                        else [Thing]
+                    )
+                    ran_p = (
+                        self.dprops[p].range
+                        if not (self.dprops[p].range == [])
+                        else [Thing]
+                    )
+                    new_feature = types.new_class(
+                        "Some_" + self.dprops[p].name + "_" + "range", (Thing,)
+                    )  # dom_p[0]
                     new_feature.equivalent_to = [self.dprops[p].some(ran_p[0])]
                     self.features.append(new_feature)
 
@@ -144,12 +161,11 @@ class Ontology:
 
         with self.onto:
             for a_class in self.features:
-                complement = types.new_class('Non_' + a_class.name, (Thing,))
+                complement = types.new_class("Non_" + a_class.name, (Thing,))
                 complement.equivalent_to = [Not(a_class)]
                 self.features_complement.append(complement)
 
             sync_reasoner_pellet(debug=0)
-
 
     def features_to_matrix(self):
 
@@ -161,38 +177,42 @@ class Ontology:
                 X[i, f] = POSITIVE
 
         return X
-    
 
     def load_targets(self, target_folder):
-       
 
         filename = target_folder + "/" + self.onto.name + "-t.nt"
         target_onto = get_ontology(filename).load()
 
-
         print("")
-        self.simple_targets = np.array(sorted(set(target_onto.search(iri='*#Simple_Class*')), key=(lambda x: x.name)))
-        self.hard_targets = np.array(sorted(set(target_onto.search(iri='*#Hard_Class*')), key=(lambda x: x.name)))
-        
+        self.simple_targets = np.array(
+            sorted(
+                set(target_onto.search(iri="*#Simple_Class*")), key=(lambda x: x.name)
+            )
+        )
+        self.hard_targets = np.array(
+            sorted(set(target_onto.search(iri="*#Hard_Class*")), key=(lambda x: x.name))
+        )
+
         print(f"# SIMPLE Disjunctive Classes: {len(self.simple_targets)}")
         for i, target in enumerate(self.simple_targets):
-            print(f"\t{i:02d} : {target} ({int(self.target_to_vector(i, type="simple").sum())}) ≡ {target.equivalent_to}")
+            print(
+                f"\t{i:02d} : {target} ({int(self.target_to_vector(i, type="simple").sum())}) ≡ {target.equivalent_to}"
+            )
         print("")
         print(f"# HARD Disjunction of Conjunctive Classes: {len(self.hard_targets)}")
         for i, target in enumerate(self.hard_targets):
-            print(f"\t{i:02d} : {target} ({int(self.target_to_vector(i, type="hard").sum())}) ≡ {target.equivalent_to}")
-
+            print(
+                f"\t{i:02d} : {target} ({int(self.target_to_vector(i, type="hard").sum())}) ≡ {target.equivalent_to}"
+            )
 
     def _conjunctive_set(self, target):
-        
+
         ind_set = set(self.individuals)
 
         for elem in target.Classes:
             ind_set.intersection_update(set(elem.instances()))
-        
+
         return ind_set
-
-
 
     def ext_target_to_vector(self, target, type: str):
         """
@@ -208,7 +228,7 @@ class Ontology:
             ind_set = self._hard_feature_ind_set(target)
         else:
             raise Exception("Wrong target type, must be in 'hard' or 'simple'")
-        
+
         for i, ind in enumerate(self.individuals):
             if ind in ind_set:
                 y[i] = 1
@@ -224,40 +244,41 @@ class Ontology:
         ind_set = set()
 
         if type == "simple":
-            ind_set = self._simple_feature_ind_set(self.simple_targets[target_id].equivalent_to[0])
+            ind_set = self._simple_feature_ind_set(
+                self.simple_targets[target_id].equivalent_to[0]
+            )
         elif type == "hard":
-            ind_set = self._hard_feature_ind_set(self.hard_targets[target_id].equivalent_to[0])
+            ind_set = self._hard_feature_ind_set(
+                self.hard_targets[target_id].equivalent_to[0]
+            )
         else:
             raise Exception("Wrong target type, must be in 'hard' or 'simple'")
-        
+
         for i, ind in enumerate(self.individuals):
             if ind in ind_set:
                 y[i] = 1
 
         return y.astype(int)
-    
-    def get_targets(self, type:str):
+
+    def get_targets(self, type: str):
         if type == "simple":
             return self.simple_targets
         elif type == "hard":
             return self.hard_targets
         else:
             raise Exception("wrong type")
-        
 
-        
     def _simple_feature_ind_set(self, target):
 
         ind_set = set()
 
         for cls in target.Classes:
             ind_set.update(set(cls.instances()))
-        
+
         return ind_set
 
-
     def _hard_feature_ind_set(self, target):
-        
+
         ind_set = set()
 
         for disj_cls in target.Classes:
@@ -266,15 +287,13 @@ class Ontology:
                 conj_set.intersection_update(set(conj_cls.instances()))
 
             ind_set.update(conj_set)
-        
-        return ind_set
 
+        return ind_set
 
     def features_summary(self):
         print(f"# Features: {len(self.features)}")
-        for i,feat in enumerate(self.features):
+        for i, feat in enumerate(self.features):
             print(f"\t{i:5d} : {feat} ≡ {feat.equivalent_to}")
-
 
     def extract_individuals(self):
 
@@ -283,7 +302,3 @@ class Ontology:
 
         # Sort individuals by name and get only uniques
         self.individuals = sorted(set(self.individuals), key=lambda an_ind: an_ind.name)
-
-
-
-    

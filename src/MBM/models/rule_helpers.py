@@ -4,7 +4,6 @@ University of Bari Aldo Moro
 @author: Ivan Diliso, Nicola Fanizzi
 """
 
-
 import numpy as np
 from sklearn.model_selection import KFold, RandomizedSearchCV
 from sklearn.base import BaseEstimator, ClassifierMixin
@@ -29,7 +28,7 @@ class RulePredictionWrapper(ABC):
         rule_individuals = self._compute_rule(rule)
 
         return self._prediction_vector(X, rule_individuals)
-    
+
     @abstractmethod
     def _compute_rule(self, rule):
         raise NotImplementedError
@@ -55,7 +54,7 @@ class SimpleRulePredictionWrapper(RulePredictionWrapper):
             return ind_set
         else:
             return set([])
-        
+
 
 class HardRulePredictionWrapper(RulePredictionWrapper):
 
@@ -68,7 +67,7 @@ class HardRulePredictionWrapper(RulePredictionWrapper):
             ind_set = set([])
 
             for disj_cls in rule.Classes:
-               
+
                 if len(disj_cls.Classes) > 0:
                     conj_ind_set = set(self.individuals)
                     for conj_cls in disj_cls.Classes:
@@ -77,4 +76,3 @@ class HardRulePredictionWrapper(RulePredictionWrapper):
             return ind_set
         else:
             return set([])
-
