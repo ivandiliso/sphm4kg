@@ -1,6 +1,8 @@
 # Learning Interpretable Probabilistic Models and Schema Axioms for Knowledge Graphs
 
 [![DOI](https://zenodo.org/badge/1005798178.svg)](https://doi.org/10.5281/zenodo.15708405)
+![GitHub License](https://img.shields.io/github/license/ivandiliso/sphm4kg)
+![Python Version](https://img.shields.io/badge/python-3.12.8%2B-blue)
 
 ## Folder Structure
 
@@ -72,8 +74,9 @@ When working with the provided utility, you can see classes defined as:
 
 - `namespace.ClassNaname`: These refer to a class defined in the ontology
 - `namespace.Some_relationName_range`: These refer to existential restrictions on the relation range, formally defined as: 
+
 $$ 
-Some\_realtionName\_range \equiv \exists relationName.Range(relationName)
+Some\_realationName\_range \equiv \exists relationName.Range(relationName)
 $$
 
 

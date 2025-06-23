@@ -72,6 +72,10 @@ N_SPLITS = 5
 JAVA_MEMORY = 4000
 TEST_PORTION = 0.3
 UNLABEL = -1
+MAX_ITER = 200
+N_COMP = 5  
+N_INIT = 10 
+LR = 0.0001
 ONTO_FOLDER = "../data/onto"
 TARGET_FOLDER = "../data/onto_target"
 ONTO_FILE = onto_name_to_filename[args.onto]
@@ -124,7 +128,7 @@ X_ind = np.array(ontology.individuals)
 
 print("\nFeature Selection Phase")
 print("Old Feature Matrix X: ", X.shape)
-feature_selector = VarianceThreshold(threshold=0.1)  # was 0.1
+feature_selector = VarianceThreshold(threshold=0.1) 
 X = feature_selector.fit_transform(X)
 
 print("New Feature Matrix X: ", X.shape)
@@ -150,20 +154,24 @@ ontology.load_targets(TARGET_FOLDER)
 # LEARNING MODELS
 ################################################################################
 
-MAX_ITER = 200
-N_COMP = 5  
-N_INIT = 10 
-LR = 0.0001
+
 batch_size = X.shape[0]
 
+# MBNB
+bernoulli_nb = MBNB() 
 
-bernoulli_nb = MBNB()
+# HB_VB
 mixture_h_vb = HierachicalBernoulliMixture(
     BernoulliMixtureVB, n_components=N_COMP, n_init=N_INIT, n_iter=MAX_ITER
 )
+
+
+# HB_EM
 mixture_h_em = HierachicalBernoulliMixture(
     BernoulliMixtureEM, n_components=N_COMP, max_iter=MAX_ITER, tol=1e-3
 )
+
+# HB_GD
 mixture_h_gd = HierachicalBernoulliMixture(
     BernoulliMixtureSGD,
     n_components=N_COMP,
@@ -172,6 +180,7 @@ mixture_h_gd = HierachicalBernoulliMixture(
     tol=1e-3,
     batch_size=batch_size,
 )
+
 
 logreg = LogisticRegression(C=0.01, penalty='l1', multi_class='multinomial', solver='saga', max_iter=200)
 hlogreg = TwoTierMixture(BernoulliMixtureVB, n_components=5)
@@ -229,6 +238,8 @@ for target_type in ["simple", "hard"]:
             "LogReg" : clone(logreg)
         }
 
+        # Compute the target y vector
+
         target = targets[target_id]
         y = ontology.target_to_vector(target_id, target_type).astype(int)
 
@@ -249,6 +260,10 @@ for target_type in ["simple", "hard"]:
             )
 
             for train_index, test_index in train_cv.split(X, y):
+
+
+                # Training Phase: Probabilistic Model
+                # Splitting indivuals (both DL an Vectorized formats) into train and test
 
                 X_train, X_test = X[train_index], X[test_index]
                 X_ind_train, X_ind_test = X_ind[train_index], X_ind[test_index]
@@ -276,6 +291,8 @@ for target_type in ["simple", "hard"]:
                 scores.setdefault("AUC", []).append(
                     roc_auc_score(y_test, y_pred_proba, average="weighted")
                 )
+
+                # Axiom Extraction Phase with Threshold Optimization
 
                 if model_name in {"HB_VB", "HB_EM", "HB_GD"}:
                     rule_wrapper = HardRulePredictionWrapper(

@@ -1,6 +1,10 @@
 """
 Università degli Studi di Bari Aldo Moro
 @authors: Ivan Diliso, Nicola Fanizzi 
+
+# Intended Usage
+python3 axiom_compare.py --onto ["lubm", "financial", "ntnames", "krkrzeroone"]
+
 """
 
 import argparse
@@ -93,9 +97,6 @@ TARGET_FOLDER   = "../data/onto_target"
 ONTO_FILE       = onto_name_to_filename[args.onto]
 ONTO_NAME       = ONTO_FILE.split(".")[0]
 
-NEG = 0     # ASSOCIO ALLA NEGAZIONE PROBABILITA 0
-UNL = 1     # ASSOCIO ALLA NON CONOSCIUTO 0.5
-POS = 2     # ASSOCIO AL POSITIVO PROBABILITA 1
 
 
 # ONTOLOGY LOADING
