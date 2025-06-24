@@ -76,7 +76,7 @@ When working with the provided utility, you can see classes defined as:
 - `namespace.Some_relationName_range`: These refer to existential restrictions on the relation range, formally defined as: 
 
 $$ 
-Some\_realationName\_range \equiv \exists relationName.Range(relationName)
+SomerealationNamerange \equiv \exists relationName.Range(relationName)
 $$
 
 
