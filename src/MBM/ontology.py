@@ -119,6 +119,7 @@ class Ontology:
                 for p in range(len(self.oprops)):
 
                     # Domain and range of the propriety
+                    """
                     dom_p = (
                         self.oprops[p].domain
                         if not (self.oprops[p].domain == [])
@@ -129,12 +130,13 @@ class Ontology:
                         if not (self.oprops[p].range == [])
                         else [Thing]
                     )
+                    """
 
                     range_new_feature = types.new_class(
                         "Some_" + self.oprops[p].name + "_" + "range", (Thing,)
                     )
 
-                    range_new_feature.equivalent_to = [self.oprops[p].some(ran_p[0])]
+                    range_new_feature.equivalent_to = [self.oprops[p].some(Thing)]
                     self.features.append(range_new_feature)
 
         if data_props:
@@ -157,15 +159,9 @@ class Ontology:
                     new_feature.equivalent_to = [self.dprops[p].some(ran_p[0])]
                     self.features.append(new_feature)
 
-        self.features_complement = []
-
         with self.onto:
-            for a_class in self.features:
-                complement = types.new_class("Non_" + a_class.name, (Thing,))
-                complement.equivalent_to = [Not(a_class)]
-                self.features_complement.append(complement)
-
             sync_reasoner_pellet(debug=0)
+        
 
     def features_to_matrix(self):
 

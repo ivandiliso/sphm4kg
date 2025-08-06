@@ -25,13 +25,14 @@ onto_name_to_filename = {
     "financial": "financial-abbrev.owl",
     "krkzeroone": "KRKZEROONE.owl",
     "ntnames": "NTNames.owl",
+    "dbpedia" : "dbpedia_parsed.xml"
 }
 
 parser = argparse.ArgumentParser("Experiments Configurations")
 parser.add_argument(
     "--onto",
     type=str,
-    choices=["lubm", "financial", "krkzeroone", "ntnames"],
+    choices=["lubm", "financial", "krkzeroone", "ntnames", "dbpedia"],
     required=True,
 )
 
@@ -57,11 +58,11 @@ TARGET_FOLDER = "../data/onto_target"
 ONTO_FILE = onto_name_to_filename[args.onto]
 ONTO_NAME = ONTO_FILE.split(".")[0]
 
-MIN_PERC_EXAMPLES = 0.20
+MIN_PERC_EXAMPLES = 0.50
 MAX_DISJUNCTION_TERMS = 3
-MAX_CONJUNCTION_TERMS = 2
+MAX_CONJUNCTION_TERMS = 3
 N_SIMPLE_TARGETS = 5
-N_HARD_TARGETS = 5
+N_HARD_TARGETS = 0
 
 
 # ONTOLOGY LOADING
@@ -225,6 +226,7 @@ with open(TARGET_FOLDER + f"/{ONTO_NAME}_simple_targets.pkl", "wb") as f:
     pickle.dump(simple_targets_class_y, f)
 
 
+
 print("\nHARD Target Generation Phase\n##############################\n")
 
 
@@ -239,7 +241,7 @@ hard_targets_class_y = []
 seen_tuples = set()
 
 
-while len(hard_targets) < N_SIMPLE_TARGETS:
+while len(hard_targets) < N_HARD_TARGETS:
 
     break_check = False
     disjunction_terms_ids = set()
