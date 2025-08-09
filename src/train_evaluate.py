@@ -133,7 +133,7 @@ X_ind = np.array(ontology.individuals)
 
 print("\nFeature Selection Phase")
 print("Old Feature Matrix X: ", X.shape)
-feature_selector = VarianceThreshold(threshold=0.01) 
+feature_selector = VarianceThreshold(threshold=0.1) 
 X = feature_selector.fit_transform(X)
 
 print("New Feature Matrix X: ", X.shape)

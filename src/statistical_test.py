@@ -5,7 +5,7 @@ from pathlib import Path
 import pickle
 
 
-res_path = Path().cwd().absolute() / "out" / "lubm.bin"
+res_path = Path().cwd().absolute() / "out" / "dbpedia_parsed.bin"
 
 with open(res_path, "rb") as f:
     raw_data = pickle.load(f)
