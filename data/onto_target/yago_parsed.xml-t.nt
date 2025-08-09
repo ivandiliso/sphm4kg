@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/yago_parsed.xml/targets"
+         xmlns="http://www.example.org/yago_parsed.xml/targets#">
+
+<owl:Ontology rdf:about="http://www.example.org/yago_parsed.xml/targets"/>
+
+<owl:Class rdf:about="#Target">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://schema.org/Organization"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Provinces_of_Iran"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Historic_district"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/List_of_districts_in_Budapest"/>
+        <rdf:Description rdf:about="http://example.org/ontology#Some_location_range"/>
+        <rdf:Description rdf:about="http://example.org/ontology#Some_knowsLanguage_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Border_town"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Football_association"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Research_institute"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Historic_counties_of_England"/>
+        <rdf:Description rdf:about="http://example.org/ontology#Some_nationality_range"/>
+        <rdf:Description rdf:about="http://example.org/ontology#Some_producer_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Giro_d'Italia"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Multi-sport_event"/>
+        <rdf:Description rdf:about="http://schema.org/CreativeWork"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Geotope"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Half-timbered"/>
+        <rdf:Description rdf:about="http://example.org/ontology#Some_nationality_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://schema.org/Place"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Charitable_organization"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Command_(military_formation)"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/UCI_Track_Cycling_World_Championships"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Women's_club_(United_States)"/>
+        <rdf:Description rdf:about="http://example.org/ontology#Some_contentLocation_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Simple_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://schema.org/Person"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Lost_city"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/New_religious_movement"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/District_municipality_(South_Africa)"/>
+        <rdf:Description rdf:about="http://yago-knowledge.org/resource/Fortification"/>
+        <rdf:Description rdf:about="http://example.org/ontology#Some_location_range"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+
+
+<owl:Class rdf:about="#Hard_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_countryOfOrigin_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_producer_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_givenName_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_deathPlace_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_memberOf_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_alumniOf_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+<owl:Class rdf:about="#Hard_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.org/Person"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_deathPlace_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.org/Movie"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_contentLocation_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.org/CreativeWork"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_genre_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+<owl:Class rdf:about="#Hard_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_countryOfOrigin_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_musicBy_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_director_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_genre_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.org/AdministrativeArea"/>
+            <rdf:Description rdf:about="http://schema.org/Corporation"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+<owl:Class rdf:about="#Hard_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_award_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_hasOccupation_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://yago-knowledge.org/resource/Human"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_givenName_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://bioschemas.org/Taxon"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_parentTaxon_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+<owl:Class rdf:about="#Hard_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_birthPlace_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_hasOccupation_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_actor_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_musicBy_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://yago-knowledge.org/resource/Town"/>
+            <rdf:Description rdf:about="http://schema.org/Place"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+</rdf:RDF>
