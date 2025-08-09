@@ -9,8 +9,10 @@
 ```
 📁 data             -> Ontologies (.owl) and their targets (.nt)
     📁 onto     
-    📁 onto_target                
+    📁 onto_target
+    📁 raw          -> Ontologies raw files, metadata, intermediate caches, preprocessing pipelines                  
 📁 out              -> Pickled output of models metrics on each target    
+📁 data             -> Documentation and additional experiment results
 📁 src              -> Source code
     📁 MBM          -> Code regarding models, rule extraction and wrappers
 ```
