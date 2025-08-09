@@ -25,14 +25,15 @@ onto_name_to_filename = {
     "financial": "financial-abbrev.owl",
     "krkzeroone": "KRKZEROONE.owl",
     "ntnames": "NTNames.owl",
-    "dbpedia" : "dbpedia_parsed.xml"
+    "dbpedia" : "dbpedia_parsed.xml",
+    "yago" : "yago_parsed.xml"
 }
 
 parser = argparse.ArgumentParser("Experiments Configurations")
 parser.add_argument(
     "--onto",
     type=str,
-    choices=["lubm", "financial", "krkzeroone", "ntnames", "dbpedia"],
+    choices=["lubm", "financial", "krkzeroone", "ntnames", "dbpedia", "yago"],
     required=True,
 )
 
@@ -58,10 +59,10 @@ TARGET_FOLDER = "../data/onto_target"
 ONTO_FILE = onto_name_to_filename[args.onto]
 ONTO_NAME = ONTO_FILE.split(".")[0]
 
-MIN_PERC_EXAMPLES = 0.50
-MAX_DISJUNCTION_TERMS = 3
+MIN_PERC_EXAMPLES = 0.30
+MAX_DISJUNCTION_TERMS = 6
 MAX_CONJUNCTION_TERMS = 3
-N_SIMPLE_TARGETS = 5
+N_SIMPLE_TARGETS = 10
 N_HARD_TARGETS = 0
 
 
@@ -125,20 +126,24 @@ print(
     f"Total number of individuals {num_ind}, will need targets with at lead {MIN_IND} to {MAX_IND} individuals"
 )
 
+"""
 for i in range(len(valid_classes)):
     c, instances = valid_classes[i]
     print(i, c, len(instances), c.equivalent_to)
+"""
 
 num_valid_classes = len(valid_classes)
 print(
     f"We have a total of {num_valid_classes} class for targers (features with at least 1 individuals)"
 )
 
+a = input()
+
 simple_targets = set()
 seen_ids = set()
 uniqueness_score = 0
 counter = 1
-uniqueness_treshold = 2
+uniqueness_treshold = 4
 
 simple_targets_class_y = []
 
@@ -236,7 +241,7 @@ simple_targets = set()
 seen_ids = set()
 uniqueness_score = 0
 counter = 1
-uniqueness_treshold = 2
+uniqueness_treshold = 4
 hard_targets_class_y = []
 seen_tuples = set()
 

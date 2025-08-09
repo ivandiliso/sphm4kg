@@ -50,16 +50,18 @@ onto_name_to_filename = {
     "financial": "financial-abbrev.owl",
     "krkzeroone": "KRKZEROONE.owl",
     "ntnames": "NTNames.owl",
-    "dbpedia" : "dbpedia_parsed.xml"
+    "dbpedia" : "dbpedia_parsed.xml",
+    "yago" : "yago_parsed.xml"
 }
 
 parser = argparse.ArgumentParser("Experiments Configurations")
 parser.add_argument(
     "--onto",
     type=str,
-    choices=["lubm", "financial", "krkzeroone", "ntnames", "dbpedia"],
+    choices=["lubm", "financial", "krkzeroone", "ntnames", "dbpedia", "yago"],
     required=True,
 )
+
 args = parser.parse_args()
 
 
