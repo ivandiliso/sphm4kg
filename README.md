@@ -10,11 +10,13 @@
 📁 data             -> Ontologies (.owl) and their targets (.nt)
     📁 onto     
     📁 onto_target
-    📁 raw          -> Ontologies raw files, metadata, intermediate caches, preprocessing pipelines                  
-📁 out              -> Pickled output of models metrics on each target    
-📁 data             -> Documentation and additional experiment results
-📁 src              -> Source code
-    📁 MBM          -> Code regarding models, rule extraction and wrappers
+    📁 raw                      -> Ontologies raw files, metadata, intermediate caches, preprocessing pipelines                  
+📁 out                          -> Pickled output of models metrics on each target    
+📁 docs                         -> Documentation and additional experiment results
+    📁 experimental_results     -> Additional experimental resuls on larger datasets
+    📁 statistical_evaluation   -> Friedman and Nemenyi post-hoc test on all dataset, problems and models
+📁 src                          -> Source code
+    📁 MBM                      -> Code regarding models, rule extraction and wrappers
 ```
 
 ## Source Code Structure
@@ -32,6 +34,8 @@
     📄 target_generator.py  -> Artificial disjuctinve problem generator
     📄 train_evaluate.py    -> Train and evaluation script (all models and all targets of a selected dataset)
     📄 axiom_compare.py     -> Utility to compare target and extracted axioms
+    📄 utils.py             -> Logging and printing utils
+    📄 statistical_test.py  -> Execute Friedman-Nemenyi test on cached results files
     📄 utils.py             -> Logging and printing utils
 ```
 
