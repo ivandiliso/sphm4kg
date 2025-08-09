@@ -5,7 +5,7 @@ from pathlib import Path
 import pickle
 
 
-res_path = Path().cwd().absolute() / "out" / "dbpedia_parsed.bin"
+res_path = Path().cwd().absolute() / "out" / "yago_parsed.bin"
 
 with open(res_path, "rb") as f:
     raw_data = pickle.load(f)
@@ -15,7 +15,7 @@ method_names = ["MB", "H_VB", "H_EM", "H_GD", "T", "L", "HL"]
 metric_names = ["Precision", "Recall", "F1", "AUC"]
 
 for i in [0,1,2,3]:
-    print(f"{80*'#'}")
+    print(f"{80*'='}")
     print(f"# Statistical Test on {metric_names[i].upper()}")
     s_avg, _ = raw_data["simple"]
     h_avg, _ = raw_data["hard"]
