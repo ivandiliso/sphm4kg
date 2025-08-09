@@ -1,7 +1,6 @@
 
 yago-wd-facts.nt
-
-
+yago_individuals_uri.bin
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
