@@ -125,12 +125,15 @@ print(f"# Individuals INFERRED: {len(ontology.individuals)}")
 # FEATURE CONSTRUCTION and SELECTION
 ################################################################################
 
+print("Feature Matrix Generation")
 X = ontology.features_to_matrix()
+
+print("Individuals Vector Generation")
 X_ind = np.array(ontology.individuals)
 
 print("\nFeature Selection Phase")
 print("Old Feature Matrix X: ", X.shape)
-feature_selector = VarianceThreshold(threshold=0.1) 
+feature_selector = VarianceThreshold(threshold=0.01) 
 X = feature_selector.fit_transform(X)
 
 print("New Feature Matrix X: ", X.shape)
@@ -143,6 +146,7 @@ for i in chosen_features_indices:
 
 owl_features = [ontology.features[i] for i in chosen_features_indices]
 
+a = input()
 
 # PREDICTION TARGET ONTOLOGY
 ################################################################################
@@ -151,6 +155,8 @@ owl_features = [ontology.features[i] for i in chosen_features_indices]
 pretty_print("\nLoading Target Classes\n", color.CYAN)
 
 ontology.load_targets(TARGET_FOLDER)
+
+a = input()
 
 
 # LEARNING MODELS

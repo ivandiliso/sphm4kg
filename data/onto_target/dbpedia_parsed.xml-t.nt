@@ -77,4 +77,141 @@
 </owl:Class>
 
 
+<owl:Class rdf:about="#Hard_Class_1">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q937857"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_team_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Artist"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_2">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.org/MusicRecording"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_producer_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Band"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson"/>
+            <rdf:Description rdf:about="http://schema.org/MusicGroup"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+
+<owl:Class rdf:about="#Hard_Class_3">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Single"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Song"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_genre_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Film"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q11424"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Hard_Class_4">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Song"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Work"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Film"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q11424"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Artist"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+<owl:Class rdf:about="#Hard_Class_5">
+  <rdfs:subClassOf rdf:resource="#Target"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ontology#Some_birthPlace_range"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_deathPlace_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/SoccerClub"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/SportsClub"/>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson"/>
+            <rdf:Description rdf:about="http://example.org/ontology#Some_genre_range"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
 </rdf:RDF>
