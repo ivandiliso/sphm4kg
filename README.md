@@ -99,3 +99,12 @@ $$
 | $\texttt{HLogReg}$ | `{n_components = 5, n_init = 10, n_iter = 200, C=0.01, penalty='l1', solver='saga', max_iter=200}` |  
 | $\texttt{AxiomWrapper}$ | `{theta_u : (0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9), theta_p : (0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)}`|  
 
+
+## Larger Ontologies Preprocessing
+
+Larger ontologies required ad-hoc preprocessing to onder to generate a unique owl file adhering to Owlready2 internal structure and limitation (for example, DBpedia containes individuals that are also classes, this breaks the Owlready2 interal class inheritance scheme). For these reasons in the `data/raw` folder both raw ontolgies file and preprocessing pipelines are provided:
+
+- **DBpedia50K**: Refined version of the triples only version of this benchmark dataset, the preprocessing file creates a unique OWL file with entities, classes, object proprieties, domain and range axioms, class membership axioms and subclass axioms.
+- **YAGO4-20**: Please download the `yago-wd-facts.nt` and put it in the `data/raw/yago4-20` to properly execute all preprocessing steps. Execute `individuals_uri.py` first and then the preprocessing pipelines to generate the yago OWL file.
+
+All the already preprocessed dataset and artificial problems are already available in the project repository.
